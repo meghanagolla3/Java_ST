@@ -1,15 +1,20 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import java.util.*;
+class Main {
+    public static int main(String[] args) {
+        int sum=0;
+        int r;
+        int x=123;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        while(x>0||x<0){
+            r = x%10;
+
+            sum = sum*10+r;
+            x = x/10;
         }
+        if(sum>Integer.MAX_VALUE /10 || (sum == Integer.MAX_VALUE /10 && x>7)) return 0;
+        if(sum<Integer.MIN_VALUE /10|| (sum == Integer.MIN_VALUE/10 && x<-8)) return 0;
+
+
+        return sum;
     }
 }
