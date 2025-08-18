@@ -1,20 +1,16 @@
+import java.math.BigInteger;
 import java.util.*;
+
+import static java.lang.Integer.parseInt;
+
 class Main {
-    public static int main(String[] args) {
-        int sum=0;
-        int r;
-        int x=123;
-
-        while(x>0||x<0){
-            r = x%10;
-
-            sum = sum*10+r;
-            x = x/10;
-        }
-        if(sum>Integer.MAX_VALUE /10 || (sum == Integer.MAX_VALUE /10 && x>7)) return 0;
-        if(sum<Integer.MIN_VALUE /10|| (sum == Integer.MIN_VALUE/10 && x<-8)) return 0;
-
-
-        return sum;
+    public static void main(String[] args) {
+        String num1 = "11";
+        String num2 = "123";
+        BigInteger n1 = new BigInteger(num1);
+        BigInteger n2 = new BigInteger(num2);
+        BigInteger sum = n1.add(n2);
+        String sum1 = sum.toString();
+        System.out.println(sum1);
     }
 }

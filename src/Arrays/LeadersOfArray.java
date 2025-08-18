@@ -14,7 +14,7 @@ public class LeadersOfArray {
                 arr[j] = arr[i];
             }
         }
-
-
+        //use collections
+        System.out.println(Arrays.toString(arr));
     }
 }
