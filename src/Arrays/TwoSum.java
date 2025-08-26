@@ -5,22 +5,18 @@ import java.util.Arrays;
 
 public class TwoSum {
     public static void main(String[] args) {
-        int[] arr= {3,2,4};
-        System.out.println(Arrays.toString(ans(arr,6)));
+        int[] arr= {2,5,5,11};
+        System.out.println(Arrays.toString(ans(arr,10)));
     }
 
     private static int[] ans(int[] arr, int target) {
-        int start=0;
-        int end= arr.length-1;
-        while(start < end){
-            if(arr[start] + arr[end] ==target){
-                 return new int[]{start,end};
-            }else if(arr[start] + arr[end] > target){
-                end--;
-            }else{
-                start++;
+        for(int i=1;i<arr.length;i++){
+            for(int j=i;j<arr.length;j++){
+                if(arr[j]+arr[j-i]==target){
+                    return new int[]{j-i,j};
+                }
             }
         }
-        return arr;
+        return new int[]{};
     }
 }
